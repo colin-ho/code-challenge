@@ -19,7 +19,7 @@ contract TokenBalances {
         TokenAmount[] memory tokenAmounts = new TokenAmount[](
             tokenAddresses.length
         );
-        for (uint64 i = 0; i < tokenAddresses.length; i++) {
+        for (uint256 i = 0; i < tokenAddresses.length; i++) {
             address token = tokenAddresses[i];
             uint256 balance = IERC20_simple(token).balanceOf(walletAddress);
             tokenAmounts[i] = TokenAmount(token, balance);
