@@ -1,29 +1,43 @@
 <html>
 
 <head>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Fancy Form</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Fancy Form</title>
 
-  <!-- You may add more stuff here -->
-  <link href="style.css" rel="stylesheet" />
+    <!-- You may add more stuff here -->
+    <link href="style.css" rel="stylesheet" />
 </head>
 
 <body>
-
-  <!-- You may reorganise the whole HTML, as long as your form achieves the same effect. -->
-  <form onsubmit="return !1">
-    <label for="input-address">ETH Address</label>
-    <input id="input-address" />
-
-    <label for="input-amount">Amount to send</label>
-    <input id="input-amount" />
-
-    <label for="input-otp">OTP Authentication</label>
-    <input type="number" id="input-otp" />
-
-    <button>SEND TOKENS</button>
-  </form>
-  <script src="script.js"></script>
+    <div id="snackbar"></div>
+    <!-- You may reorganise the whole HTML, as long as your form achieves the same effect. -->
+    <div id="container">
+        <h1>Fancy Form</h1>
+        <p style="padding:0px 20%">Send ETH using the form below. Enter the target ETH Address, your desired transfer amount,
+            then verify with an OTP. Press enter or click the send button to confirm your transaction!
+        </p>
+        <form id="transaction-form">
+            <div class="fields">
+                <label for="input-address">ETH Address:</label>
+                <input required id="input-address" />
+                <span class="error" id="address-error">ETH Address is not valid</span>
+            </div>
+            <div class="fields">
+                <label for="input-amount">Amount to send:</label>
+                <input required type="number" id="input-amount" min="0" step=".01"/>
+            </div>
+            <div class="fields">
+                <label for="input-otp">OTP Authentication:</label>
+                <input type="number" id="input-otp" />
+                <span class="error" id="otp-error">OTP is not correct</span>
+            </div>
+            <div id="OTPbutton">Get OTP</div>
+            <button type="submit" id="submitButton">Send</button>
+        </form>
+        <span id="success"></span>
+    </div>
+    <script src="https://cdn.ethers.io/lib/ethers-5.2.umd.min.js" type="application/javascript"></script>
+    <script src="script.js"></script>
 </body>
 
 </html>

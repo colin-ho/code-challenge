@@ -4,10 +4,10 @@ const {abi} = require("./build/contracts/TokenBalances.json");
 const ADDR = "0x9fFa6Ed1d056E66FB911bF5b3403ec92cf78f199";   // your contract address
 const ABI = abi;    // your contract ABI
 
-const ADDRESS = "0x7a250d5630B4cF539739dF2C5dAcb4c659F2488D"; // some wallet address with token balance
+const ADDRESS = "0x9A92B87e5e669F0fb374de430457A458ea71351B"; // some wallet address with token balance
 const TOKENS = [    // token contract addresses
-    "0xff67881f8d12f372d91baae9752eb3631ff0ed00",
-    "0x0531ca5a97db8e6b4b9a5ed78d7b52991b6b24d9",
+    "0xf80A32A835F79D7787E8a8ee5721D0fEaFd78108",
+    "0x481B55f34Ef7839c408f35f6B57a68cd54B84eFC",
 ];
 
 const provider = ethers.providers.getDefaultProvider("ropsten");

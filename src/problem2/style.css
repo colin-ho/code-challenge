@@ -1,8 +1,134 @@
-body {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
-  min-width: 360px;
-  font-family: Arial, Helvetica, sans-serif;
+body{
+    background-color: #193B4D;
+    color:#E2FCA4;
+    font-family: 'Roboto', sans-serif;
+    font-size: 20px;
+    letter-spacing: 0.05em;
 }
+
+#container{
+    height:100%;
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+#transaction-form{
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap:25px;
+    width: 100%;
+    margin-top: 20px;
+}
+
+p{
+    color:white
+}
+
+input{
+    padding: 10px 10px;
+    border:none;
+    border-radius: 5px;
+    outline: none;
+    width: 100%;
+    font-size: 20px;
+}
+
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
+.fields{
+    display:flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 50%;
+    gap:5px;
+}
+
+h1{
+    font-size: 50px;
+}
+
+#OTPbutton{
+    background: #fff;
+    color:#193B4D;
+    font-size: 20px;
+    border:none;
+    border-radius: 5px;
+    padding:5px 15px;
+    cursor: pointer;
+}
+
+#submitButton{
+    background: #E2FCA4;
+    color:#193B4D;
+    font-size: 20px;
+    border:none;
+    border-radius: 5px;
+    padding:10px 100px;
+    cursor: pointer;
+}
+
+.error{
+    color:rgb(255, 97, 97);
+    font-size: 14px;
+    display:none
+}
+
+#snackbar {
+    visibility: hidden; /* Hidden by default. Visible on click */
+    min-width: 250px; /* Set a default minimum width */
+    margin-left: -125px; /* Divide value of min-width by 2 */
+    background-color: #fff; /* Black background color */
+    color: #193B4D; /* White text color */
+    text-align: center; /* Centered text */
+    border-radius: 2px; /* Rounded borders */
+    padding: 16px; /* Padding */
+    position: fixed; /* Sit on top of the screen */
+    z-index: 1; /* Add a z-index if needed */
+    left: 50%; /* Center the snackbar */
+    top: 30px; /* 30px from the bottom */
+  }
+  
+  /* Show the snackbar when clicking on a button (class added with JavaScript) */
+  #snackbar.show {
+    visibility: visible; /* Show the snackbar */
+    /* Add animation: Take 0.5 seconds to fade in and out the snackbar.
+    However, delay the fade out process for 2.5 seconds */
+    -webkit-animation: fadein 0.5s, fadeout 0.5s 9.5s;
+    animation: fadein 0.5s, fadeout 0.5s 9.5s;
+  }
+  
+  /* Animations to fade the snackbar in and out */
+  @-webkit-keyframes fadein {
+    from {top: 0; opacity: 0;}
+    to {top: 30px; opacity: 1;}
+  }
+  
+  @keyframes fadein {
+    from {top: 0; opacity: 0;}
+    to {top: 30px; opacity: 1;}
+  }
+  
+  @-webkit-keyframes fadeout {
+    from {top: 30px; opacity: 1;}
+    to {top: 0; opacity: 0;}
+  }
+  
+  @keyframes fadeout {
+    from {top: 30px; opacity: 1;}
+    to {top: 0; opacity: 0;}
+  }

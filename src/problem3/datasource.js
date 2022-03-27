@@ -41,7 +41,7 @@ class DataSource {
     }
 }
 
-/*
+
 //Test code
 
 const ds = new DataSource()
@@ -54,4 +54,3 @@ ds.getPrices()
     }).catch(error => {
         console.error(error);
     });
-*/
