@@ -10,6 +10,10 @@ const TOKENS = [    // token contract addresses
     "0x481B55f34Ef7839c408f35f6B57a68cd54B84eFC",
 ];
 
+/*NOTE: the smart contract was deployed on Ropsten Test Network, not Ethereum Mainnet,
+so only addresses on Ropsten will work. I currently don't have enough ETH for the gas fees
+right now, so I hope this will suffice. 
+*/
 const provider = ethers.providers.getDefaultProvider("ropsten");
 
 const test = async () => {

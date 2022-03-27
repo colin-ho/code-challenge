@@ -12,7 +12,7 @@ const holderAddresses = [
     "0xfe808b079187cc460f47374580f5fb47c82b87a5",
 ];
 
-const abi = ["function balanceOf(address) view returns (uint)"];
+const abi = ["function balanceOf(address) view returns (uint256)"];
 
 const contract = new ethers.Contract(tokenContract, abi, provider);
 
@@ -22,10 +22,15 @@ function formatCommas(n: number) {
     return separatedNumber.join(".");
 }
 
+interface BigNumber {
+    _hex: string;
+    _isBigNumber: boolean;
+}
+
 holderAddresses.forEach(address => {
     contract
         .balanceOf(address)
-        .then((amount: number) =>
-            console.log(address + " " + formatCommas(amount / 100000000))
+        .then((amount: BigNumber) =>
+            console.log(address + " " + formatCommas(parseInt(amount._hex, 16) / 100000000))
         );
 })
